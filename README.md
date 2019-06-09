@@ -15,7 +15,7 @@ A hotel booking application in React. Homework for the [CodeYourFuture React mod
 
 1. Extract the `<button>` in the `src/Search.js` component to be its own separate component.
 
-2. Extract the `<header>` in the `src/App.js` to be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `https://image.flaticon.com/icons/svg/139/139899.svg` or find your own image URL). You can adjust the CSS by editing `src/App.css` to make your Heading looks better if necessary.
+2. Extract the `<header>` in the `src/App.js` tohttps://image.flaticon.com/icons/svg/139/139899.svg` be its own separate component called `Heading`. Make sure that you import and render the `<Heading />` component within `src/App.js`. In the `Heading` component, render the hotel's logo in an `<img>` (you can use `or find your own image URL). You can adjust the CSS by editing`src/App.css` to make your Heading looks better if necessary.
 
 3. In `src/App.js`, above the `<Bookings />` component add a new component called `TouristInfoCards` which shows 3 _cards_. A card is a common user interface pattern with an image at the top and some related text underneath. The cards must link to `peoplemakeglasgow.com`, `visitmanchester.com` and `visitlondon.com`. The cards should contain the name of the city and an image of the city (use the same className as the example below to benefit from [Bootstrap](https://getbootstrap.com/docs/4.2/components/card) library which is already imported for you in the project). Use the JSX code below as an example of one card (note that in JSX, you'll need to use `className` instead of `class`):
 
