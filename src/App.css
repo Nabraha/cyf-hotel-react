@@ -53,5 +53,6 @@ tr {
 }
 
 .card {
+  display: flex;
   width: 18rem;
 }

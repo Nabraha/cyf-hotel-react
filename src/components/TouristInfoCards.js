@@ -1,28 +1,21 @@
 import React from "react";
+import cities from "../components/cityCards";
 
-const TouristInfoCards = () => {
+const TouristInfoCards = props => {
   return (
     <div className="card">
-      <img src="..." className="card-img-top" />
-      <div className="card-body">
-        <a href="www.peoplemakeglasgow.com" className="btn btn-primary">
-          Go Glasgow
-        </a>
-      </div>
-
-      <img src="..." className="card-img-top" />
-      <div className="card-body">
-        <a href="www.visitmanchester.com" className="btn btn-primary">
-          Go Manchester
-        </a>
-      </div>
-
-      <img src="..." className="card-img-top" />
-      <div className="card-body">
-        <a href="www.visitlondon.com" className="btn btn-primary">
-          Go London
-        </a>
-      </div>
+      {cities.map((city, index) => (
+        <div className="card-body" key={index}>
+          <img
+            src={city.img.src}
+            className={city.img.className}
+            alt={city.img.alt}
+          />
+          <a href={city.link} className="btn btn-primary">
+            {city.city}
+          </a>
+        </div>
+      ))}
     </div>
   );
 };

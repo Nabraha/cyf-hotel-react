@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search.js";
+import Search from "./Search";
 import SearchResults from "./components/SearchResults";
 import FakeBookings from "./data/fakeBookings.json";
 
@@ -12,7 +12,7 @@ const Bookings = () => {
     <div className="App-content">
       <div className="container">
         <Search search={search} />
-        {<SearchResults results={FakeBookings} />}
+        {<SearchResults customerDetails={FakeBookings} />}
       </div>
     </div>
   );

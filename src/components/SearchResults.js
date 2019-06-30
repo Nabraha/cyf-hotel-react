@@ -1,33 +1,28 @@
 import React from "react";
-import moment from "moment";
+import TableRowList from "./TableRowList";
+
 const SearchResults = props => {
-  const result = props.results;
+  const result = props.customerDetails;
   return (
     <table className="table">
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Check-in</th>
-        <th>Check-out</th>
-        <th>Duration In Days</th>
-      </tr>
-
-      {result.map(result => {
-        const checkIn = result.checkInDate;
-        const checkOut = result.checkOutDate;
-        const duration = moment(checkOut).diff(checkIn);
-        const durationInHours = duration / 1000 / 60 / 60;
-        const durationInDays = Math.round(durationInHours / 24);
-        return (
-          <tr>
-            <td>{result.firstName}</td>
-            <td>{result.surname}</td>
-            <td>{checkIn}</td>
-            <td>{checkOut}</td>
-            <td>{durationInDays}</td>
-          </tr>
-        );
-      })}
+      <thead className="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Room #</th>
+          <th scope="col">Check-in</th>
+          <th scope="col">Check-out</th>
+          <th scope="col">Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        {result.map(result => {
+          return <TableRowList list={result} />;
+        })}
+      </tbody>
     </table>
   );
 };
