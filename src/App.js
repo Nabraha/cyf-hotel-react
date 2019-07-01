@@ -3,6 +3,7 @@ import Heading from "./components/Heading";
 import Bookings from "./Bookings";
 import Footer from "./components/Footer";
 import TouristInfoCards from "./components/TouristInfoCards";
+import Form from "./components/Form";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ const App = () => {
       <Heading />
       <TouristInfoCards />
       <Bookings />
+
       <Footer contactInfo={businessInfo} />
     </div>
   );

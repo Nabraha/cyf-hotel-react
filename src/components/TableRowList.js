@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
+import Delete from "./DeleteButton";
+import Edit from "./EditButton";
 
 class TableRowList extends Component {
   constructor(props) {
@@ -27,8 +29,8 @@ class TableRowList extends Component {
         style={{ backgroundColor: this.state.rowBackgroundColor }}
         s
       >
-        <td scope="row">{this.props.list.id}</td>
-        <td>{this.props.list.title}</td>
+        {/*         <td scope="row">{this.props.list.id}</td>
+        <td>{this.props.list.title}</td> */}
         <td>{this.props.list.firstName}</td>
         <td>{this.props.list.surname}</td>
         <td>{this.props.list.email}</td>
@@ -36,6 +38,12 @@ class TableRowList extends Component {
         <td>{checkIn}</td>
         <td>{checkOut}</td>
         <td>{durationInDays}</td>
+        <td>
+          <Edit />
+        </td>
+        <td>
+          <Delete />
+        </td>
       </tr>
     );
   }

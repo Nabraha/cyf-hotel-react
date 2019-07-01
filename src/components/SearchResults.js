@@ -7,8 +7,8 @@ const SearchResults = props => {
     <table className="table">
       <thead className="thead-dark">
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Title</th>
+          {/* <th scope="col">ID</th>
+          <th scope="col">Title</th> */}
           <th scope="col">First name</th>
           <th scope="col">Last name</th>
           <th scope="col">Email</th>
@@ -16,6 +16,8 @@ const SearchResults = props => {
           <th scope="col">Check-in</th>
           <th scope="col">Check-out</th>
           <th scope="col">Duration</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Remove</th>
         </tr>
       </thead>
       <tbody>

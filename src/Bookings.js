@@ -1,21 +1,57 @@
-import React from "react";
+import React, { Component } from "react";
 import Search from "./Search";
 import SearchResults from "./components/SearchResults";
-import FakeBookings from "./data/fakeBookings.json";
+import Form from "./components/Form";
 
-const search = searchVal => {
-  console.info("TO DO!", searchVal);
-};
+class Bookings extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fakeBookings: []
+    };
+  }
 
-const Bookings = () => {
-  return (
-    <div className="App-content">
-      <div className="container">
-        <Search search={search} />
-        {<SearchResults customerDetails={FakeBookings} />}
+  componentDidMount() {
+    const URL = "https://cyf-react.glitch.me";
+    fetch(URL)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          fakeBookings: data
+        });
+      });
+  }
+
+  handleOnSearch(searchValue) {
+    this.setState({
+      fakeBookings: this.state.fakeBookings.filter(name => {
+        return (
+          name.firstName.toLowerCase() === searchValue.toLowerCase() ||
+          name.surname.toLowerCase() === searchValue.toLowerCase()
+        );
+      })
+    });
+  }
+
+  addBookings = newBookings => {
+    const updateBooking = this.state.fakeBooking;
+    updateBooking.push(newBookings);
+    this.setState({
+      fakeBooking: updateBooking
+    });
+  };
+
+  render() {
+    return (
+      <div className="App-content">
+        <div className="container">
+          <Search search={searchVal => this.handleOnSearch(searchVal)} />
+          {<SearchResults customerDetails={this.state.fakeBookings} />}
+          <Form addUser={this.addBookings} />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Bookings;
