@@ -40,7 +40,6 @@ export default class Form extends Component {
         <form onSubmit={this.handleOnSubmit}>
           <div class="form-row">
             <div class="col-md-1 mb-3">
-              <label for="validationDefault01">ID</label>
               <input
                 type="hidden"
                 class="form-control"
