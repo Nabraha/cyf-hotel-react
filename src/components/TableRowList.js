@@ -29,8 +29,8 @@ class TableRowList extends Component {
         style={{ backgroundColor: this.state.rowBackgroundColor }}
         s
       >
-        {/*         <td scope="row">{this.props.list.id}</td>
-        <td>{this.props.list.title}</td> */}
+        <td scope="row">{this.props.list.id}</td>
+        <td>{this.props.list.title}</td>
         <td>{this.props.list.firstName}</td>
         <td>{this.props.list.surname}</td>
         <td>{this.props.list.email}</td>

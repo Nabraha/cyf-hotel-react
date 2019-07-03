@@ -33,9 +33,18 @@ class Bookings extends Component {
     });
   }
 
+  generateId = () => {
+    const idList = this.state.fakeBookings.map(ele => {
+      return ele.id;
+    });
+    return Math.max(...idList) + 1;
+  };
+
   addBookings = newBookings => {
-    const updateBooking = this.state.fakeBooking;
-    updateBooking.push(newBookings);
+    const updateBooking = this.state.fakeBookings;
+    const booking = Object.assign({}, newBookings);
+    booking.id = this.generateId();
+    updateBooking.push(booking);
     this.setState({
       fakeBooking: updateBooking
     });
